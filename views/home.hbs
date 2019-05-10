@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  <link rel="stylesheet" href="/style.css">
+  <title>HTTP BASICS</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns mt-5">
+        <h4>Form with GET Method</h4>
+        <form action="GET" class="u-full-width">
+          <div class="row">
+            <div class="six columns">
+              <label for="">First Number</label>
+              <input type="number" name="number1" class="u-full-width" value="{{ qs.number1 }}">
+            </div>
+            <div class="six columns">
+              <label for="">Second Number</label>
+              <input type="number" name="number2" class="u-full-width" value="{{ qs.number2 }}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="eight columns">
+              <button class="button-primary" type="submit">Submit Numbers</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="twelve columns mt-3">
+        <h4>Form with POST Method</h4>
+        <form action="/home" method="POST" class="u-full-width" id="form2">
+          <div class="row">
+            <div class="columns six">
+                <label>First Name</label>
+                <input type="text" name="firstname" class="u-full-width">
+            </div>
+            <div class="columns six">
+              <label>Last Name</label>
+              <input type="text" name="lastname" class="u-full-width">
+            </div>
+          </div>
+          <button type="submit" class="button-primary">Send Names</button>
+        </form>
+        <div id="form2-results" class="u-fullwidth mt-3 hide">
+          <h5>Form Input</h5>
+          <p>First Name: <b>{{data.firstname }}</b> </p>
+          <p>Last Name: <b>{{data.lastname }}</b> </p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="columns twelve mt-3">
+        <h4>Another Form with POST Method</h4>
+        <form action="/home" method="POST" class="full-width" id="form3">
+          <div class="row">
+            <div class="columns twelve">
+              <label for="">My Favorite Fruits</label>
+              <select name="fruit" class="u-full-width">
+                <option value="apple">Apple</option>
+                <option value="orange">Orange</option>
+                <option value="banana">Banana</option>
+                <option value="kiwi">Kiwi</option>
+              </select>
+            </div>
+            
+          </div>
+          <div class="row">
+            <div class="columns four">
+              <label>Respondent Gender</label>
+              <label>
+                <input type="radio" id="undisclosed" name="gender" value="undisclosed">
+                <span class="label-body">Don't want to disclose</span>
+              </label>
+            </div>
+            <div class="columns four">
+              <label>&nbsp;</label>
+              <label>
+                <input type="radio" id="male" name="gender" value="male">
+                <span class="label-body">Male</span>
+              </label>
+            </div>
+            <div class="columns four">
+              <label>&nbsp;</label>
+              <label>
+                <input type="radio" id="female" name="gender" value="female">
+                <span class="label-body">Female</span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="button-primary">Submit your Answer</button>
+        </form>
+        <div id="form3-results" class="u-fullwidth mt-3"></div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="columns twelve-mt-3">
+        <h4>Login Form</h4>
+        <form action="/home" method="POST" class="full-width">
+          <div class="row">
+            <div class="columns six">
+              <label>Username</label>
+              <input type="text" name="user" class="u-full-width">
+            </div>
+            <div class="columns six">
+              <label>Password</label>
+              <input type="password" name="pwd" class="u-full-width">
+              <input type="hidden" name="action" value="login" class="u-full-width">
+            </div>
+          </div>
+          <button type="submit" class="button-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="/main.js"></script>
+</body>
+</html>
